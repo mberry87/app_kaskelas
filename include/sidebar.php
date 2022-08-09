@@ -35,14 +35,16 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
         </li> -->
 
         <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
-        <li class="nav-item">
-          <div class="bg-success nav-link text-white">
-            <i class="nav-icon fas fa-money-bill-wave"></i>
-            <p>
-              Sisa Uang: <?= number_format($jml_uang_kas - $jml_pengeluaran); ?>
-            </p>
-          </div>
-        </li>
+        <?php if ($_SESSION['id_jabatan'] !== '9') : ?>
+          <li class="nav-item">
+            <div class="bg-success nav-link text-white">
+              <i class="nav-icon fas fa-money-bill-wave"></i>
+              <p>
+                Sisa Uang: <?= number_format($jml_uang_kas - $jml_pengeluaran); ?>
+              </p>
+            </div>
+          </li>
+        <?php endif ?>
         <li class="nav-item has-treeview menu-open">
           <a href="index.php" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
