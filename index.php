@@ -159,7 +159,7 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
               </div>
             </div>
 
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-sm-12">
               <div class="small-box bg-info">
                 <div class="inner">
                   <h3>Laporan Kas</h3>
