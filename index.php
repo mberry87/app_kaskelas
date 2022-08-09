@@ -52,7 +52,8 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
       <section class="content">
         <div class="container-fluid">
           <div class="row">
-            <?php if ($_SESSION['id_jabatan'] == '1') : ?>
+            <!-- script ori -->
+            <!-- <?php if ($_SESSION['id_jabatan'] == '1') : ?>
               <div class="col-lg-3">
                 <div class="card shadow">
                   <div class="card-body">
@@ -104,14 +105,83 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
                   <?php endif ?>
                 </div>
               </div>
+            </div> -->
+
+            <!-- script costum -->
+            <div class="col-lg-3 col-6">
+              <div class="small-box bg-warning">
+                <div class="inner">
+                  <h3> <?= $jml_siswa; ?> Siswa/i</h3>
+                  <h5>Jumlah Siswa</h5>
+                </div>
+                <div class="icon">
+                  <i class="ion-ios-people"></i>
+                </div>
+                <?php if ($_SESSION['id_jabatan'] !== '9') : ?>
+                  <a href="siswa.php" class="small-box-footer">
+                    TABEL SISWA <i class="fas fa-arrow-circle-right"></i>
+                  </a>
+                <?php endif ?>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>Rp. <?= number_format($jml_uang_kas - $jml_pengeluaran, 0, ',', '.'); ?></h3>
+                  <h5>Saldo Kas</h5>
+                </div>
+                <div class="icon">
+                  <i class="ion-arrow-graph-up-right"></i>
+                </div>
+                <?php if ($_SESSION['id_jabatan'] !== '9') : ?>
+                  <a href="uang_kas.php" class="small-box-footer">
+                    UANG KAS <i class="fas fa-arrow-circle-right"></i>
+                  </a>
+                <?php endif ?>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <h3>Rp. <?= number_format($jml_pengeluaran, 0, ',', '.'); ?></h3>
+                  <h5>Kas Keluar</h5>
+                </div>
+                <div class="icon">
+                  <i class="ion-arrow-graph-down-right"></i>
+                </div>
+                <?php if ($_SESSION['id_jabatan'] !== '9') : ?>
+                  <a href="pengeluaran.php" class="small-box-footer">
+                    PENGELUARAN KAS <i class="fas fa-arrow-circle-right"></i>
+                  </a>
+                <?php endif ?>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <h3>Laporan Kas</h3>
+                  <h5>Print Out</h5>
+                </div>
+                <div class="icon">
+                  <i class="ion-ios-printer-outline"></i>
+                </div>
+                <a href="laporan.php" class="small-box-footer">
+                  LAPORAN KAS <i class="fas fa-arrow-circle-right"></i>
+                </a>
+              </div>
             </div>
           </div>
+
         </div>
-      </section>
-      <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
-    <!-- <footer class="main-footer">
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <!-- <footer class="main-footer">
       <strong>Copyright &copy; 2020 By Andri Firman Saputra.</strong>
       All rights reserved.
       <div class="float-right d-none d-sm-inline-block">
@@ -119,7 +189,7 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
       </div>
     </footer> -->
 
-    <?php include 'include/footer.php'; ?>
+  <?php include 'include/footer.php'; ?>
 
   </div>
 </body>
