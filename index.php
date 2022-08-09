@@ -108,7 +108,7 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
             </div> -->
 
             <!-- script costum -->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-sm-12">
               <div class="small-box bg-warning">
                 <div class="inner">
                   <h3> <?= $jml_siswa; ?> Siswa/i</h3>
@@ -125,7 +125,7 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
               </div>
             </div>
 
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-sm-12">
               <div class="small-box bg-success">
                 <div class="inner">
                   <h3>Rp. <?= number_format($jml_uang_kas - $jml_pengeluaran, 0, ',', '.'); ?></h3>
@@ -142,7 +142,7 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
               </div>
             </div>
 
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-sm-12">
               <div class="small-box bg-danger">
                 <div class="inner">
                   <h3>Rp. <?= number_format($jml_pengeluaran, 0, ',', '.'); ?></h3>
@@ -159,7 +159,7 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
               </div>
             </div>
 
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-sm-12">
               <div class="small-box bg-info">
                 <div class="inner">
                   <h3>Laporan Kas</h3>
