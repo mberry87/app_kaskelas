@@ -15,7 +15,11 @@ $jml_pengeluaran = $jml_pengeluaran['jml_pengeluaran'];
 
 $jml_uang_kas = mysqli_fetch_assoc(mysqli_query($conn, "SELECT sum(minggu_ke_1 + minggu_ke_2 + minggu_ke_3 + minggu_ke_4) as jml_uang_kas FROM uang_kas"));
 $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
+
+
+$bulan_pembayaran = mysqli_query($conn, "SELECT * FROM bulan_pembayaran ORDER BY tahun ASC");
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -108,7 +112,42 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
             </div> -->
 
             <!-- script costum -->
-            <div class="col-lg-3 col-sm-12">
+
+            <div class="col-md-3 col-sm-12">
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>Rp. <?= number_format($jml_uang_kas - $jml_pengeluaran, 0, ',', '.'); ?></h3>
+                  <h5>Saldo Kas</h5>
+                </div>
+                <div class="icon">
+                  <i class="ion-cash"></i>
+                </div>
+                <?php if ($_SESSION['id_jabatan'] !== '9') : ?>
+                  <a href="uang_kas.php" class="small-box-footer">
+                    UANG KAS <i class="fas fa-arrow-circle-right"></i>
+                  </a>
+                <?php endif ?>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-12">
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <h3>Rp. <?= number_format($jml_pengeluaran, 0, ',', '.'); ?></h3>
+                  <h5>Kas Keluar</h5>
+                </div>
+                <div class="icon">
+                  <i class="ion-android-cart"></i>
+                </div>
+                <?php if ($_SESSION['id_jabatan'] !== '9') : ?>
+                  <a href="pengeluaran.php" class="small-box-footer">
+                    PENGELUARAN KAS <i class="fas fa-arrow-circle-right"></i>
+                  </a>
+                <?php endif ?>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-12">
               <div class="small-box bg-warning">
                 <div class="inner">
                   <h3> <?= $jml_siswa; ?> Siswa/i</h3>
@@ -125,55 +164,48 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
               </div>
             </div>
 
-            <div class="col-lg-3 col-sm-12">
-              <div class="small-box bg-success">
-                <div class="inner">
-                  <h3>Rp. <?= number_format($jml_uang_kas - $jml_pengeluaran, 0, ',', '.'); ?></h3>
-                  <h5>Saldo Kas</h5>
-                </div>
-                <div class="icon">
-                  <i class="ion-arrow-graph-up-right"></i>
-                </div>
-                <?php if ($_SESSION['id_jabatan'] !== '9') : ?>
-                  <a href="uang_kas.php" class="small-box-footer">
-                    UANG KAS <i class="fas fa-arrow-circle-right"></i>
+            <?php if ($_SESSION['id_jabatan'] !== '9') : ?>
+              <div class="col-lg-3 col-sm-12">
+                <div class="small-box bg-secondary">
+                  <div class="inner">
+                    <h3> <?= $jml_jabatan; ?> Jabatan</h3>
+                    <h5>Jumlah jabatan</h5>
+                  </div>
+                  <div class="icon">
+                    <i class="ion-person-add"></i>
+                  </div>
+                  <a href="jabatan.php" class="small-box-footer">
+                    TABEL JABATAN <i class="fas fa-arrow-circle-right"></i>
                   </a>
                 <?php endif ?>
+                </div>
               </div>
-            </div>
 
-            <div class="col-lg-3 col-sm-12">
-              <div class="small-box bg-danger">
-                <div class="inner">
-                  <h3>Rp. <?= number_format($jml_pengeluaran, 0, ',', '.'); ?></h3>
-                  <h5>Kas Keluar</h5>
+              <?php if ($_SESSION['id_jabatan'] == '9') : ?>
+                <div class="col-md-3 col-sm-12">
+                  <div class="small-box bg-info">
+                    <div class="inner">
+                      <h3>Laporan Kas</h3>
+                      <h5>Print Out</h5>
+                    </div>
+                    <div class="icon">
+                      <i class="ion-ios-printer-outline"></i>
+                    </div>
+                    <a href="laporan.php" class="small-box-footer">
+                      LAPORAN KAS <i class="fas fa-arrow-circle-right"></i>
+                    </a>
+                  </div>
                 </div>
-                <div class="icon">
-                  <i class="ion-arrow-graph-down-right"></i>
-                </div>
-                <?php if ($_SESSION['id_jabatan'] !== '9') : ?>
-                  <a href="pengeluaran.php" class="small-box-footer">
-                    PENGELUARAN KAS <i class="fas fa-arrow-circle-right"></i>
-                  </a>
-                <?php endif ?>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-12">
-              <div class="small-box bg-info">
-                <div class="inner">
-                  <h3>Laporan Kas</h3>
-                  <h5>Print Out</h5>
-                </div>
-                <div class="icon">
-                  <i class="ion-ios-printer-outline"></i>
-                </div>
-                <a href="laporan.php" class="small-box-footer">
-                  LAPORAN KAS <i class="fas fa-arrow-circle-right"></i>
-                </a>
-              </div>
-            </div>
+              <?php endif ?>
           </div>
+
+          <!-- <div class="row">
+            <div class="col-md-6">
+              <div>
+                <canvas id="saldoKas"></canvas>
+              </div>
+            </div>
+          </div> -->
 
         </div>
     </div>
@@ -192,6 +224,42 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
   <?php include 'include/footer.php'; ?>
 
   </div>
+
+  <!-- action chart -->
+
+  <!-- <script>
+    const data = {
+      labels: [
+        'agustus',
+        'september',
+        'oktober'
+      ],
+      datasets: [{
+        label: 'Grafik Saldo Kas',
+        data: {
+          agustus: ''
+        },
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)'
+        ],
+        hoverOffset: 4
+      }]
+    };
+
+    const config = {
+      type: 'bar',
+      data: data,
+    };
+
+    const saldoKas = new Chart(
+      document.getElementById('saldoKas'),
+      config
+    );
+  </script> -->
+
+
 </body>
 
 </html>
