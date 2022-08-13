@@ -32,6 +32,7 @@ if (isset($_POST['btnLogin'])) {
 <head>
 	<?php include 'include/css.php'; ?>
 	<title>Login</title>
+	<!-- style ori -->
 	<style>
 		* {
 			margin: 0;
@@ -40,13 +41,14 @@ if (isset($_POST['btnLogin'])) {
 		}
 
 		body {
-			min-height: 100vh;
+			background-color: #eaeaea;
+			/* min-height: 100vh;
 			background-size: cover;
 			background-repeat: no-repeat;
-			background-image: url(assets/img/img_properties/sd014.jpg);
+			background-image: url(assets/img/img_properties/sd014.jpg); */
 		}
 
-		.container {
+		.login-box {
 			position: absolute;
 			left: 50%;
 			top: 50%;
@@ -56,7 +58,8 @@ if (isset($_POST['btnLogin'])) {
 </head>
 
 <body>
-	<div class="container">
+	<!-- main ori -->
+	<!-- <div class="container">
 		<div class="row justify-content-center">
 			<div class="col-lg-5 mx-5 py-4 px-5 text-dark rounded border border-dark" style="background-color: rgba(180,190,196,.6);">
 				<h3 class="text-center">UANG KAS SDN 014 Tg.Pinang <br> Kelas IV b</h3>
@@ -75,13 +78,59 @@ if (isset($_POST['btnLogin'])) {
 				</form>
 			</div>
 		</div>
+	</div> -->
+
+	<div class="login-box">
+		<div class="login-logo">
+			<img src="assets/img/img_properties/logoSD.png" alt="logo" style="width: 65px;" class="mb-2">
+			<h3>SDN Negeri 014 Tg. Pinang</h3>
+			<h5>Applikasi Sistem Informasi Kas Kelas IV b</h5>
+		</div>
+		<div class="card">
+			<div class="card-body login-card-body">
+				<p class="login-box-msg">Silahkan Login</p>
+
+				<form method="post">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control " placeholder="Masukkan Username" name="username" id="username" required>
+						<div class="input-group-append">
+							<div class="input-group-text">
+								<span class="fas fa-envelope"></span>
+							</div>
+						</div>
+					</div>
+					<div class="input-group mb-3 ">
+						<input type="password" class="form-control" placeholder="Masukkan Password" name="password" id="password" required>
+						<div class="input-group-append">
+							<div class="input-group-text">
+								<span class="fas fa-lock"></span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-8">
+							<div class="icheck-primary">
+								<input type="checkbox" id="remember">
+								<label for="remember">
+									Ingatkan Saya
+								</label>
+							</div>
+						</div>
+						<div class="col-4">
+							<button type="submit" name="btnLogin" class="btn btn-primary btn-block">Masuk</button>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
 	</div>
 
 	<footer style="position: absolute; bottom: 0; width: 100%; text-align: center;">
 		<div style="background-color: transparent;" class="container-fluid mt-5">
 			<div class="row justify-content-center">
 				<div class="col-lg text-center text-white pt-4 pb-2">
-					<p>&copy; Copyright 2022. By StrawBerry | Tanjungpinang.</p>
+					<p class="text-secondary">&copy; Copyright 2022. By StrawBerry | Tanjungpinang.</p>
 				</div>
 			</div>
 		</div>

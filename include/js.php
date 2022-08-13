@@ -8,6 +8,7 @@
 <script src="assets/vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- chart -->
 <script src="assets/vendor/chart/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!-- datatables -->
 <script src="assets/vendor/datatables/js/jquery.dataTables.min.js"></script>
 <script src="assets/vendor/datatables/js/dataTables.bootstrap4.min.js"></script>
@@ -23,3 +24,4 @@
 <script src="assets/js/fancybox-config.js"></script>
 <script src="assets/js/sweetalert2-config.js"></script>
 <script src="assets/js/popover-config.js"></script>
+<script src="assets/js/chart-config.js"></script>
