@@ -1,4 +1,5 @@
 <?php
+$page = 'user';
 require 'connection.php';
 checkLogin();
 $user = mysqli_query($conn, "SELECT * FROM user INNER JOIN jabatan ON user.id_jabatan = jabatan.id_jabatan");
@@ -186,18 +187,8 @@ if (isset($_POST['btnTambahUser'])) {
           </div>
         </div>
       </section>
-      <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
-    <!-- <footer class="main-footer">
-    <strong>Copyright &copy; 2020 By Andri Firman Saputra.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0.0
-    </div>
-  </footer> -->
     <?php include 'include/footer.php'; ?>
-
   </div>
 </body>
 

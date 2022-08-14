@@ -1,4 +1,5 @@
 <?php
+$page = 'pengeluaran';
 require 'connection.php';
 checkLogin();
 $pengeluaran = mysqli_query($conn, "SELECT * FROM pengeluaran INNER JOIN user ON pengeluaran.id_user = user.id_user");
@@ -156,18 +157,8 @@ if (isset($_POST['btnEditPengeluaran'])) {
           </div>
         </div>
       </section>
-      <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
-    <!-- <footer class="main-footer">
-    <strong>Copyright &copy; 2020 By Andri Firman Saputra.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0.0
-    </div>
-  </footer> -->
     <?php include 'include/footer.php'; ?>
-
   </div>
 </body>
 

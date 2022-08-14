@@ -84,7 +84,7 @@ if (isset($_POST['btnLogin'])) {
 		<div class="login-logo">
 			<img src="assets/img/img_properties/logoSD.png" alt="logo" style="width: 65px;" class="mb-2">
 			<h3>SDN Negeri 014 Tg. Pinang</h3>
-			<h5>Applikasi Sistem Informasi Kas Kelas IV b</h5>
+			<h5>Applikasi Sistem Informasi <br> Kas Kelas IV b</h5>
 		</div>
 		<div class="card">
 			<div class="card-body login-card-body">
