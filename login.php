@@ -37,15 +37,12 @@ if (isset($_POST['btnLogin'])) {
 		* {
 			margin: 0;
 			padding: 0;
-			box-sizing: border-box;
 		}
 
 		body {
 			background-color: #eaeaea;
-			/* min-height: 100vh;
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-image: url(assets/img/img_properties/sd014.jpg); */
+			min-height: 100vh;
+
 		}
 
 		.login-box {
@@ -53,6 +50,12 @@ if (isset($_POST['btnLogin'])) {
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -55%);
+		}
+
+		footer {
+			position: absolute;
+			margin-left: 12px;
+			color: #b1b1b1;
 		}
 	</style>
 </head>
@@ -124,17 +127,10 @@ if (isset($_POST['btnLogin'])) {
 
 			</div>
 		</div>
+		<footer>
+			<p>&copy; Copyright 2022. By StrawBerry | Tanjungpinang.</p>
+		</footer>
 	</div>
-
-	<footer style="position: absolute; bottom: 0; width: 100%; text-align: center;">
-		<div style="background-color: transparent;" class="container-fluid mt-5">
-			<div class="row justify-content-center">
-				<div class="col-lg text-center text-white pt-4 pb-2">
-					<p class="text-secondary">&copy; Copyright 2022. By StrawBerry | Tanjungpinang.</p>
-				</div>
-			</div>
-		</div>
-	</footer>
 </body>
 
 </html>
