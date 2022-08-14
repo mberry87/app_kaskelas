@@ -1,4 +1,5 @@
 <?php
+$page = 'riwayat_uang_kas';
 require 'connection.php';
 checkLogin();
 $riwayat = mysqli_query($conn, "SELECT * FROM riwayat INNER JOIN user ON riwayat.id_user = user.id_user INNER JOIN uang_kas ON riwayat.id_uang_kas = uang_kas.id_uang_kas INNER JOIN siswa ON uang_kas.id_siswa = siswa.id_siswa INNER JOIN bulan_pembayaran ON uang_kas.id_bulan_pembayaran = bulan_pembayaran.id_bulan_pembayaran ORDER BY tanggal DESC");
@@ -65,18 +66,8 @@ $riwayat = mysqli_query($conn, "SELECT * FROM riwayat INNER JOIN user ON riwayat
           </div>
         </div>
       </section>
-      <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
-    <!-- <footer class="main-footer">
-    <strong>Copyright &copy; 2020 By Andri Firman Saputra.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0.0
-    </div>
-  </footer> -->
     <?php include 'include/footer.php'; ?>
-
   </div>
 </body>
 

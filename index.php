@@ -1,4 +1,5 @@
 <?php
+$page = 'dashboard';
 require 'connection.php';
 checkLogin();
 $jml_siswa = mysqli_fetch_assoc(mysqli_query($conn, "SELECT count(id_siswa) as jml_siswa FROM siswa"));
@@ -198,68 +199,11 @@ $bulan_pembayaran = mysqli_query($conn, "SELECT * FROM bulan_pembayaran ORDER BY
                 </div>
               <?php endif ?>
           </div>
-
-          <!-- <div class="row">
-            <div class="col-md-6">
-              <div>
-                <canvas id="saldoKas"></canvas>
-              </div>
-            </div>
-          </div> -->
-
         </div>
+      </section>
     </div>
-    </section>
-    <!-- /.content -->
+    <?php include 'include/footer.php'; ?>
   </div>
-  <!-- /.content-wrapper -->
-  <!-- <footer class="main-footer">
-      <strong>Copyright &copy; 2020 By Andri Firman Saputra.</strong>
-      All rights reserved.
-      <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 1.0.0
-      </div>
-    </footer> -->
-
-  <?php include 'include/footer.php'; ?>
-
-  </div>
-
-  <!-- action chart -->
-
-  <!-- <script>
-    const data = {
-      labels: [
-        'agustus',
-        'september',
-        'oktober'
-      ],
-      datasets: [{
-        label: 'Grafik Saldo Kas',
-        data: {
-          agustus: ''
-        },
-        backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)'
-        ],
-        hoverOffset: 4
-      }]
-    };
-
-    const config = {
-      type: 'bar',
-      data: data,
-    };
-
-    const saldoKas = new Chart(
-      document.getElementById('saldoKas'),
-      config
-    );
-  </script> -->
-
-
 </body>
 
 </html>

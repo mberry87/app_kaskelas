@@ -46,7 +46,9 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
           </li>
         <?php endif ?>
         <li class="nav-item has-treeview menu-open">
-          <a href="index.php" class="nav-link active">
+          <a href="index.php" class="nav-link <?php if ($page == 'dashboard') {
+                                                echo 'active';
+                                              } ?>">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -55,7 +57,9 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
         </li>
         <?php if ($dataUser['id_jabatan'] == '1') : ?>
           <li class="nav-item">
-            <a href="jabatan.php" class="nav-link">
+            <a href="jabatan.php" class="nav-link <?php if ($page == 'jabatan') {
+                                                    echo 'active';
+                                                  } ?>">
               <i class="nav-icon fas fa-cog"></i>
               <p>
                 Jabatan
@@ -63,7 +67,9 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
             </a>
           </li>
           <li class="nav-item">
-            <a href="user.php" class="nav-link">
+            <a href="user.php" class="nav-link <?php if ($page == 'user') {
+                                                  echo 'active';
+                                                } ?>">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 User
@@ -73,33 +79,43 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
         <?php endif ?>
         <?php if ($_SESSION['id_jabatan'] !== '9') : ?>
           <li class="nav-item">
-            <a href="siswa.php" class="nav-link">
+            <a href="siswa.php" class="nav-link <?php if ($page == 'siswa') {
+                                                  echo 'active';
+                                                } ?>">
               <i class="fas fa-user-tie nav-icon"></i>
               <p>Siswa</p>
             </a>
           </li>
           <li class="nav-header">INPUT DATA</li>
           <li class="nav-item">
-            <a href="uang_kas.php" class="nav-link">
+            <a href="uang_kas.php" class="nav-link <?php if ($page == 'uang_kas') {
+                                                      echo 'active';
+                                                    } ?>">
               <i class="fas fa-dollar-sign nav-icon"></i>
               <p>Uang Kas</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pengeluaran.php" class="nav-link">
+            <a href="pengeluaran.php" class="nav-link <?php if ($page == 'pengeluaran') {
+                                                        echo 'active';
+                                                      } ?>">
               <i class="fas fa-sign-out-alt nav-icon"></i>
               <p>Pengeluaran</p>
             </a>
           </li>
           <li class="nav-header">HISTORY</li>
           <li class="nav-item">
-            <a href="riwayat.php" class="nav-link">
+            <a href="riwayat.php" class="nav-link <?php if ($page == 'riwayat_uang_kas') {
+                                                    echo 'active';
+                                                  } ?>">
               <i class="fas fa-stopwatch nav-icon"></i>
               <p>Riwayat Uang Kas</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="riwayat_pengeluaran.php" class="nav-link">
+            <a href="riwayat_pengeluaran.php" class="nav-link <?php if ($page == 'riwayat_pengeluaran') {
+                                                                echo 'active';
+                                                              } ?>">
               <i class="fas fa-stopwatch nav-icon"></i>
               <p>Riwayat Pengeluaran</p>
             </a>
@@ -107,7 +123,9 @@ $jml_uang_kas = $jml_uang_kas['jml_uang_kas'];
         <?php endif ?>
         <li class="nav-header">LAPORAN KAS</li>
         <li class="nav-item">
-          <a href="laporan.php" class="nav-link">
+          <a href="laporan.php" class="nav-link <?php if ($page == 'laporan') {
+                                                  echo 'active';
+                                                } ?>">
             <i class="fas fa-file nav-icon"></i>
             <p>Laporan</p>
           </a>

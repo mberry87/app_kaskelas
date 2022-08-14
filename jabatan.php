@@ -1,4 +1,5 @@
 <?php
+$page = 'jabatan';
 require 'connection.php';
 checkLogin();
 $jabatan = mysqli_query($conn, "SELECT * FROM jabatan");
@@ -138,18 +139,8 @@ if (isset($_POST['btnTambahJabatan'])) {
           </div>
         </div>
       </section>
-      <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
-    <!-- <footer class="main-footer">
-    <strong>Copyright &copy; 2020 By Andri Firman Saputra.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0.0
-    </div>
-  </footer> -->
     <?php include 'include/footer.php'; ?>
-
   </div>
 </body>
 
